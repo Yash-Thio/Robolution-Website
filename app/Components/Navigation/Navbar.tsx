@@ -1,6 +1,8 @@
+import Link from 'next/link'
 import React from "react";
 
 export default function Navbar() {
+
   return (
     <nav className="flex gap-20 fixed top-0 z-50 w-full px-4 py-4">
       <img src="" alt="robolution" />
@@ -8,22 +10,30 @@ export default function Navbar() {
         <ul className="flex list-image-none gap-10 font-bold justify-items-start">
           <li>
             <button className="font-apple-system font-semibold hover:text-amber-800">
-              Home
+              <Link href="/">
+                Home
+              </Link>  
             </button>
           </li>
           <li>
             <button className="font-apple-system font-semibold hover:text-amber-800">
-              Team
+              <Link href="/Team">
+                Team
+              </Link>  
             </button>
           </li>
           <li>
             <button className="font-apple-system font-semibold hover:text-amber-800">
-              Achievements
+              <Link href="/Achievements">
+                Achievements
+              </Link>
             </button>
           </li>
           <li>
             <button className="font-apple-system font-semibold hover:text-amber-800">
-              Events
+              <Link href="/Events">
+                Events
+              </Link>
             </button>
           </li>
         </ul>

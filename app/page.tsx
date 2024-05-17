@@ -1,6 +1,5 @@
-import Head from "next/head";
 import Navbar from "./Components/Navigation/Navbar";
-import Hero from "./Components/Landing-page/Hero";
+import Hero from "./Home/Hero";
 
 
 export default function main() {
