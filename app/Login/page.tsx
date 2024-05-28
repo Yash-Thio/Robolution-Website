@@ -5,11 +5,6 @@ import { Input } from "../Components/ui/input";
 import { cn } from "@/utils/cn";
 import { Boxes } from "../Components/ui/background-box";
 import axios from "axios";
-import {
-  IconBrandGithub,
-  IconBrandGoogle,
-  IconBrandOnlyfans,
-} from "@tabler/icons-react";
 
 export default function SignupFormDemo() {
   const nameRef = useRef<HTMLInputElement>(null);
@@ -26,13 +21,11 @@ export default function SignupFormDemo() {
     
     }
     try {
-      const response = await axios.post('https://your-api-endpoint.com/signup', data);
-      console.log('Form submitted successfully:', response.data);
+      const response = await axios.post('http://localhost:5000/Login', data);
+      console.log('Form submitted successfully:', response.data.token);
     } catch (error) {
       console.error('Error submitting form:', error);
     }
-
-    console.log("Form submitted with values:", data);
   };
   return (
     <div className=" h-screen relative w-full overflow-hidden bg-black flex flex-col items-center justify-center">

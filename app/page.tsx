@@ -32,7 +32,6 @@ export default function Main() {
 
   return (
     <div ref={vantaRef} className="bg">
-      <Navbar />
       <Hero />
     </div>
   );

@@ -1,12 +1,13 @@
 import React from 'react'
-import Navbar from '../Components/Navigation/Navbar'
+import { BackgroundBeams } from '../Components/ui/background-beams'
+import Body from './Body'
 
 const Team = () => {
   return (
-    <div>
-      <Navbar />
-      <div>Team</div>
-    </div>
+    <>
+      <Body />
+      <BackgroundBeams />
+    </>
   )
 }
 

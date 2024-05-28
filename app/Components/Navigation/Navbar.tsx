@@ -6,14 +6,45 @@ import { useState } from 'react';
 export default function Navbar() {
 
   const [isLoginOpen,setIsLoginOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   function handleLogin(){
     setIsLoginOpen((cur) => !cur)
   }
 
+  function handleMouseEnter() {
+    setIsDropdownOpen(true);
+  }
+
+  function handleMouseLeave() {
+    setIsDropdownOpen(false);
+  }
+
   return (
     <nav className="flex gap-20 text-white fixed top-0 z-50 w-full px-4 py-4">
-      <img className = " w-16" src="/images/Naya-removebg-.png" alt="robolution" />
+      {/* <img className = " w-16" src="/images/Naya-removebg-.png" alt="robolution" /> */}
+      <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <img className="w-16" src="/images/Naya-removebg-.png" alt="robolution" />
+        <div className={`absolute left-0 top-16 bg-black p-4 rounded-md shadow-lg transition-all duration-800 ease-in-out ${isDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+          <ul className="flex flex-col gap-2">
+            <li>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="/images/facebook-logo.png" alt="Facebook" className="w-6 h-6" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                <img src="/images/twitter-logo.png" alt="Twitter" className="w-6 h-6" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/robolution.bitm/" target="_blank" rel="noopener noreferrer">
+                <img src="/images/instagram-logo.png" alt="Instagram" className="w-6 h-6" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div className="flex w-screen justify-between">
         <ul className="flex list-image-none gap-10 font-bold justify-items-start">
           <li>

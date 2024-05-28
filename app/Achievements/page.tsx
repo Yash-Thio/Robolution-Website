@@ -1,12 +1,13 @@
 import React from 'react'
-import Navbar from '../Components/Navigation/Navbar'
+import { BackgroundBeams } from '../Components/ui/background-beams'
+import Body from './Body'
 
 const Achievements = () => {
   return (
-    <div>
-        <Navbar />
-        <h1>Achievements</h1>
-    </div>
+    <>
+        <Body />
+        <BackgroundBeams />
+    </>
   )
 }
 
