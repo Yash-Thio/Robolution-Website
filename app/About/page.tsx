@@ -2,13 +2,13 @@ import React from 'react'
 import { BackgroundBeams } from '../Components/ui/background-beams'
 import Body from './Body'
 
-const Achievements = () => {
+const Team = () => {
   return (
     <>
-        <Body />
-        <BackgroundBeams />
+      <BackgroundBeams />
+      <Body />
     </>
   )
 }
 
-export default Achievements
+export default Team

@@ -1,13 +1,13 @@
 import React from 'react'
 import { BackgroundBeams } from '../Components/ui/background-beams'
-import Body from './Body'
+import Body from './Ongoing'
 
 const Events = () => {
   return (
-    <>
-        <Body />
+    <div className="relative min-h-screen">
         <BackgroundBeams />
-    </>
+        <Body />
+    </div>
   )
 }
 

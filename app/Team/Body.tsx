@@ -5,3 +5,4 @@ export default function Body() {
     <div className=' mt-24'>Team</div>
   )
 }
+

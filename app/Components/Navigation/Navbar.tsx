@@ -1,16 +1,20 @@
 'use client'
+import { isLogin } from '@/app/Store/Atoms/Islogin';
 import Link from 'next/link'
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from 'react';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 export default function Navbar() {
 
-  const [isLoginOpen,setIsLoginOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const loggedIn = useRecoilValue(isLogin);
+  const setloggedIn = useSetRecoilState(isLogin);
+  const [clientLoggedIn, setClientLoggedIn] = useState(false);
 
-  function handleLogin(){
-    setIsLoginOpen((cur) => !cur)
-  }
+  useEffect(() => {
+    setClientLoggedIn(loggedIn);
+  }, [loggedIn]);
 
   function handleMouseEnter() {
     setIsDropdownOpen(true);
@@ -18,6 +22,11 @@ export default function Navbar() {
 
   function handleMouseLeave() {
     setIsDropdownOpen(false);
+  }
+
+  function Logout(){
+    localStorage.removeItem("jwt");
+    setloggedIn(false);
   }
 
   return (
@@ -56,15 +65,15 @@ export default function Navbar() {
           </li>
           <li>
             <button className="font-apple-system font-semibold hover:text-amber-800 pt-4">
-              <Link href="/Team">
-                Team
+              <Link href="/About">
+                About Us
               </Link>  
             </button>
           </li>
           <li>
             <button className="font-apple-system font-semibold hover:text-amber-800 pt-4">
-              <Link href="/Achievements">
-                Achievements
+              <Link href="/Team">
+                Team
               </Link>
             </button>
           </li>
@@ -78,18 +87,23 @@ export default function Navbar() {
         </ul>
 
         <ul className="flex list-image-none gap-10 justify-items-end">
-          <li>
+          {clientLoggedIn && (<li>
             <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
               Admin
             </button>
-          </li>
-          <li>
-            <button onClick={handleLogin} className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+          </li>)}
+          {!(clientLoggedIn) && (<li>
+            <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
               <Link href="/Login">
                 Login
               </Link>
             </button>
-          </li>
+          </li>)}
+          {clientLoggedIn && (<li>
+            <button onClick={Logout} className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+              Logout
+            </button>
+          </li>)}
         </ul>
       </div>
     </nav>

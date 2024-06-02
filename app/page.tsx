@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef } from "react";
-import Navbar from "./Components/Navigation/Navbar";
 import * as THREE from 'three';
 import NET from 'vanta/src/vanta.rings';
 import Hero from "./Home/Hero";

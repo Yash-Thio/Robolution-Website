@@ -5,11 +5,14 @@ import { Input } from "../Components/ui/input";
 import { cn } from "@/utils/cn";
 import { Boxes } from "../Components/ui/background-box";
 import axios from "axios";
+import { useSetRecoilState } from "recoil";
+import { isLogin } from "../Store/Atoms/Islogin";
 
 export default function SignupFormDemo() {
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+  const setIsLogin = useSetRecoilState(isLogin);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,6 +26,8 @@ export default function SignupFormDemo() {
     try {
       const response = await axios.post('http://localhost:5000/Login', data);
       console.log('Form submitted successfully:', response.data.token);
+      localStorage.setItem('jwt', response.data.token);
+      setIsLogin(true);
     } catch (error) {
       console.error('Error submitting form:', error);
     }
