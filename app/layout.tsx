@@ -1,9 +1,12 @@
-"use client"
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Components/Navigation/Navbar";
-import { RecoilRoot } from "recoil";
+import RecoilProvider from "./Store/RecoilProvider";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Robolution',
+}
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,15 +19,14 @@ export default function RootLayout({
     <html lang="en">
       <head>
       <link rel="icon" href="images/favicon.ico" /> 
-      <title>Robolution</title>
       </head>
       <body>
-        <RecoilRoot>
+          <RecoilProvider>
         <div className={inter.className}>
           <Navbar />
           {children}
         </div>
-        </RecoilRoot>
+        </RecoilProvider>
       </body>
     </html>
   );
