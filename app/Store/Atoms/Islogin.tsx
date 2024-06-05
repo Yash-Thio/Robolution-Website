@@ -1,4 +1,5 @@
 import { atom } from 'recoil';
+import { selector } from 'recoil';
 
 const getInitialLoginState = () => {
   if (typeof window !== 'undefined') {
