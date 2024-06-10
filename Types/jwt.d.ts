@@ -1,5 +1,4 @@
 export interface CustomJwtPayload{
-    name: string,
-    email: string,
+    id: string,
     isAdmin: boolean,
 }

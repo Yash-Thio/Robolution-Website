@@ -1,9 +1,9 @@
 import { atom } from 'recoil';
-import { selector } from 'recoil';
 
 const getInitialLoginState = () => {
   if (typeof window !== 'undefined') {
-    return !!localStorage.getItem('jwt');
+    const token = localStorage.getItem('jwt');
+    return Boolean(token);
   }
   return false;
 };

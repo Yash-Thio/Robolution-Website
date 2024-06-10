@@ -1,11 +1,11 @@
 import React from 'react'
 import { BackgroundBeams } from '../Components/ui/background-beams'
-import Body from './Body'
+import BoardStructure from './BoardStructure'
 
 const Achievements = () => {
   return (
     <>
-        <Body />
+        <BoardStructure />
         <BackgroundBeams />
     </>
   )
