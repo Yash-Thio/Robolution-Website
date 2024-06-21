@@ -2,6 +2,7 @@
 import React from "react";
 import { StickyScroll } from "../Components/ui/sticky-scroll-reveal";
 import Image from "next/image";
+import { TypewriterEffect } from "../Components/ui/TypewriterEffect";
 
 const content = [
   {
@@ -91,10 +92,21 @@ const content = [
     link: "google forms link",
   },
 ];
+
+const Ongoing_events = [
+  {
+    text: "Ongoing",
+    classname: "",
+  },
+  {
+    text: "Events",
+    classname: "",
+  },
+];
 export default function Ongoing() {
   return (
-    <div className="mt-24">
-      <h1>Ongoing Events</h1>
+    <div className="mt-24 flex flex-col gap-8">
+      <TypewriterEffect words={Ongoing_events} />
       <StickyScroll content={content} />
     </div>
   );

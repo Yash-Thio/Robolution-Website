@@ -51,7 +51,8 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <div className="sm:pt-24 flex flex-col w-full h-full">
+    <div className="sm:pt-24 flex flex-col gap-10 w-full h-full">
+      <div className=" h-40">
       <motion.div
         initial={{ width: "100%", height: "60%", position: "fixed", zIndex: 1 }}
         animate={
@@ -87,6 +88,7 @@ const About: React.FC = () => {
           className="w-full h-3/5"
         />
       </motion.div>
+      </div>
       <div className="relative mt-auto pt-96 px-10 text-justify items-center text-lg sm:px-40">
         Robolution is a robotics club dedicated to teaching you everything you
         need to know about building robots and gadgets. Whether you're
