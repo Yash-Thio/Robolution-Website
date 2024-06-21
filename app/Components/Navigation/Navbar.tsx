@@ -43,18 +43,18 @@ export default function Navbar() {
         >
           <ul className="flex flex-col gap-2">
             <li>
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                <img src="/images/facebook-logo.png" alt="Facebook" className="w-6 h-6" />
+              <a href="https://www.facebook.com/TeamRobolution" target="_blank" rel="noopener noreferrer">
+                <img src="/images/Facebook_Logo_Primary.png" alt="Facebook" className="w-6 h-6" />
               </a>
             </li>
             <li>
-              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                <img src="/images/twitter-logo.png" alt="Twitter" className="w-6 h-6" />
+              <a href="https://www.linkedin.com/company/robolution-bit-mesra/" target="_blank" rel="noopener noreferrer">
+                <img src="/images/In-Blue-128@2x.png" alt="Linkedin" className="w-6 h-6" />
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com/robolution.bitm/" target="_blank" rel="noopener noreferrer">
-                <img src="/images/instagram-logo.png" alt="Instagram" className="w-6 h-6" />
+                <img src="/images/instagram-1675670_1280.png" alt="Instagram" className="w-6 h-6" />
               </a>
             </li>
           </ul>

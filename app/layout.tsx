@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "./Components/Navigation/Navbar";
+import Navigation from "./Components/Navigation/Navigation";
 import RecoilProvider from "./Store/RecoilProvider";
 import { Metadata } from "next";
 
@@ -23,7 +23,7 @@ export default function RootLayout({
       <body>
           <RecoilProvider>
         <div className={inter.className}>
-          <Navbar />
+          <Navigation />
           {children}
         </div>
         </RecoilProvider>

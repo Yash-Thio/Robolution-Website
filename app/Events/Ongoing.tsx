@@ -68,6 +68,28 @@ const content = [
     ),
     link: "google forms link",
   },
+  {
+    title: "Fruit Ninja",
+    description:
+      `Our club organized Fruit Ninja, a Marquee event on Day 3 of Bitotsav'24, using Hand
+      Gesture as an innovative adaptation of the classic mobile game that utilizes hand
+      tracking technology.
+      The innovative use of hand gesture recognition technology added a unique twist to the
+      traditional gameplay, making it a memorable and enjoyable activity for all participants.
+      We look forward to exploring similar creative initiatives in future college events.`,
+    content: (
+      <div className="h-full w-full  flex items-center justify-center text-white">
+        <Image
+          src="/linear.webp"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
+    link: "google forms link",
+  },
 ];
 export default function Ongoing() {
   return (
